@@ -1,0 +1,41 @@
+# 🧾 Anotações — S3 e  Lambda
+
+---
+
+## 🔹 Aprendizados principais
+
+- **S3** atua como gatilho de eventos para funções **Lambda**.
+- **Lambda** executa lógica de negócio sem necessidade de servidor.
+- **DynamoDB** é ideal para armazenar logs, status ou metadados processados.
+- **LocalStack** permite simular todo o ambiente AWS, facilitando testes e estudos.
+
+---
+
+## 🔹 Fluxo de processamento 
+
+1. Um arquivo é enviado ao bucket `cenarios-rpg` (S3);
+2. O evento de upload dispara a função Lambda;
+3. A Lambda extrai dados e grava um registro na tabela `cenarios_rpg` (DynamoDB);
+4. O LocalStack exibe logs e confirmações no terminal.
+
+---
+
+## 🔹 Benefícios de usar LocalStack
+
+- Reduz custos de experimentação;
+- Aumenta a velocidade de testes;
+- Facilita a integração com pipelines de CI/CD;
+- Cria um ambiente realista sem necessidade de credenciais AWS.
+
+---
+
+## 🔹 Insights sobre automação serverless
+
+> A integração entre **S3 → Lambda → DynamoDB** forma a base de muitos sistemas **serverless**, onde o processamento é totalmente automatizado e escalável, sem necessidade de gerenciar servidores.
+
+---
+
+## 🔹 Possíveis extensões do projeto
+- Adicionar **SNS** para enviar notificações após o processamento;
+- Usar **Step Functions** para coordenar fluxos mais complexos;
+- Incluir **CloudWatch Logs** para monitoramento e métricas.

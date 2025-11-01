@@ -1,0 +1,35 @@
+# 🧾 Anotações — Criação de Stacks com AWS CloudFormation
+
+## 🔹 Conceito principal
+
+O **AWS CloudFormation** é um serviço que permite **criar e gerenciar recursos AWS de forma declarativa**, usando arquivos YAML ou JSON. Com ele, é possível definir toda a infraestrutura de um projeto em um único documento — chamado **template**.
+
+---
+
+## 🔹 Estrutura de um template básico
+
+Um template CloudFormation geralmente contém:
+1. **AWSTemplateFormatVersion**
+2. **Description**
+3. **Parameters** 
+4. **Resources**
+5. **Outputs** )
+
+---
+
+## 🔹 Recursos definidos neste desafio
+
+- Bucket S3 para armazenar os cenários;
+- Lambda para processar uploads;
+- EC2 simulando o servidor do sistema RPG;
+- (Opcional) Step Function orquestrando as etapas.
+
+---
+
+## 🔹 Processo de criação da Stack
+
+1. Acessar o **AWS Management Console → CloudFormation**;  
+2. Selecionar **"Create Stack" → "With new resources"**;  
+3. Fazer upload do arquivo `.yaml`;  
+4. Definir parâmetros e confirmar a criação;  
+5. Acompanhar logs e eventos de criação até o status **"CREATE_COMPLETE"**.

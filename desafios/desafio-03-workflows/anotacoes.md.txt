@@ -1,0 +1,34 @@
+# 🧾 Anotações — Validação de Workflows com AWS Step Functions
+
+## 🔹 Objetivo da validação
+
+O foco deste desafio foi entender **como o Step Functions gerencia fluxos complexos** com ramificações baseadas em **condições e retornos de sucesso/falha**.
+
+---
+
+## 🔹 Estrutura típica de validação
+
+Um fluxo Step Functions pode incluir:
+- **Estados de decisão (Choice):** usados para verificar o resultado de tarefas;
+- **Estados de sucesso (Succeed):** encerram o fluxo quando tudo ocorre como esperado;
+- **Estados de falha (Fail):** interrompem o fluxo em caso de erro.
+
+---
+
+## 🔹 Exemplo de caso aplicado
+
+- **Input:** Upload de cenário RPG no S3;
+- **Lambda 1:** Verifica integridade do arquivo;
+- **Choice:** Se for válido → segue para processamento; se não → falha;
+- **Lambda 2:** Processa e retorna status final;
+- **Succeed/Fail:** Marca o fim do fluxo com base no resultado.
+
+---
+
+## 🔹 Boas práticas observadas
+
+- Sempre retornar mensagens padronizadas nas Lambdas (`{ status: "SUCCESS" }`);
+- Centralizar logs e métricas no **CloudWatch**;
+- Evitar loops desnecessários — preferir estados claros e objetivos;
+- Usar nomes descritivos para cada estado do fluxo.
+

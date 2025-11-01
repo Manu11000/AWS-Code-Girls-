@@ -1,0 +1,41 @@
+# 🧾 Anotações — CloudFormation vs Terraform
+
+
+Ambas as ferramentas — **AWS CloudFormation** e **Terraform** — seguem o princípio de **Infraestrutura como Código (IaC)**, que permite descrever a infraestrutura em arquivos legíveis, versionáveis e automatizáveis.
+
+---
+
+## 🔹 Pontos fortes do CloudFormation
+
+- Totalmente integrado ao ecossistema AWS;
+- Suporte nativo e manutenção direta da Amazon;
+- Automatiza rollback e controle de dependências;
+- Ideal para quem atua somente dentro da AWS.
+
+---
+
+## 🔹 Pontos fortes do Terraform
+- Multi-cloud: funciona em AWS, Azure, GCP e até ambientes on-premises;
+- Linguagem HCL simples, modular e reutilizável;
+- Possui “planos de execução” (`terraform plan`) que permitem revisar antes de aplicar;
+- Grande comunidade e inúmeros módulos prontos.
+
+---
+
+## 🔹 Diferenças práticas observadas
+
+| Recurso | CloudFormation | Terraform |
+|----------|----------------|-----------|
+| Formato | YAML / JSON | HCL (.tf) |
+| Escopo | Apenas AWS | Multi-cloud |
+| Estado | Gerenciado pela AWS | Controlado via arquivo ou remoto |
+| Modularidade | Nested Stacks | Modules |
+| Rollback | Automático | Parcial |
+| Curva de aprendizado | Menor (para AWS users) | Maior (mais flexível) |
+
+---
+
+## 🔹 Insight aplicado ao caso RPG
+
+> Caso o sistema RPG precise evoluir para um ambiente híbrido (por exemplo, banco de dados no GCP e frontend em AWS), **Terraform** seria a melhor escolha.  
+> Porém, para manter o foco no ecossistema AWS e garantir consistência, **CloudFormation** continua sendo a solução mais prática.

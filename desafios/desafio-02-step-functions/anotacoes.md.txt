@@ -1,0 +1,28 @@
+# 🧾 Anotações — AWS Step Functions
+
+## 🔹 Entendendo Step Functions
+- É um serviço de **orquestração de workflows**;
+- Permite desenhar fluxos de tarefas com **estados**, **transições** e **condições**;
+- Facilidade  no monitoramento e depuração de execuções.
+
+---
+
+## 🔹 Tipos de workflows
+1. **Standard Workflow** — usado para processos longos e rastreáveis;
+2. **Express Workflow** — indicado para eventos de alta frequência e curta duração.
+
+---
+
+## 🔹 Estados principais
+- `Task`: executa uma função Lambda ou outro serviço;
+- `Choice`: cria condições;
+- `Parallel`: executa tarefas simultaneamente;
+- `Wait`: adiciona pausa entre etapas;
+- `Fail` / `Succeed`: definem resultados do fluxo.
+
+---
+
+## 🔹 Benefícios
+- Menos código para gerenciar lógica complexa;
+- Alta visibilidade de cada etapa;
+- Recuperação automática em caso de falhas.
